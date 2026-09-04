@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ch. 54 Quiz — Thyroid &amp; Parathyroid Disorders</title>
+<style>
+:root{
+  --bg:#0f0a17;
+  --card:#1a1226;
+  --card2:#221a33;
+  --accent:#c026a3;
+  --accent2:#a855f7;
+  --text:#f1e9fb;
+  --muted:#a992c9;
+  --correct:#22c55e;
+  --incorrect:#f43f5e;
+  --border:#3a2a56;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:radial-gradient(circle at top,#1c1130,#0f0a17 60%);
+  color:var(--text);
+  font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+  min-height:100vh;
+  padding-bottom:60px;
+}
+header{
+  padding:22px 16px 14px;
+  text-align:center;
+  background:linear-gradient(120deg,#701a75,#4c1d95);
+  box-shadow:0 4px 18px rgba(168,85,247,0.25);
+}
+header h1{
+  margin:0 0 4px;
+  font-size:1.5rem;
+  background:linear-gradient(90deg,#f0abfc,#e9d5ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+header p{margin:0;color:#e9d5ff;font-size:0.85rem;}
+
+/* ---- Filter bar ---- */
+#filter-wrap{
+  max-width:760px;
+  margin:16px auto 0;
+  padding:0 16px;
+}
+.tabbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:10px;
+}
+.tabbtn{
+  background:var(--card2);
+  color:var(--muted);
+  border:1.5px solid var(--border);
+  border-radius:20px;
+  padding:6px 13px;
+  font-size:0.78rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .15s;
+}
+.tabbtn:hover{border-color:var(--accent2);color:var(--text);}
+.tabbtn.active{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#fff;
+  border-color:transparent;
+}
+.tabbtn.sata-tab.active{background:linear-gradient(90deg,#db2777,#9333ea);}
+#topic-select{
+  width:100%;
+  background:var(--card2);
+  color:var(--text);
+  border:1.5px solid var(--border);
+  border-radius:10px;
+  padding:8px 12px;
+  font-size:0.85rem;
+  margin-bottom:6px;
+}
+#filter-summary{
+  font-size:0.76rem;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+#filter-summary b{color:#f0abfc;}
+
+#progress-bar-bg{
+  background:var(--card2);
+  border-radius:20px;
+  height:10px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+#progress-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transition:width .3s ease;
+}
+#progress-text{
+  text-align:center;
+  color:var(--muted);
+  font-size:0.78rem;
+  margin-top:4px;
+}
+main{
+  max-width:760px;
+  margin:16px auto;
+  padding:0 16px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+.tag{
+  display:inline-block;
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.5px;
+  padding:3px 10px;
+  border-radius:20px;
+  background:rgba(192,38,163,0.25);
+  color:#f0abfc;
+  margin-bottom:10px;
+  margin-right:6px;
+}
+.tag.sata{background:rgba(168,85,247,0.28);color:#d8b4fe;}
+.tag.cat{background:rgba(34,197,94,0.16);color:#86efac;}
+.qnum{color:var(--muted);font-size:0.78rem;margin-bottom:2px;}
+.stem{font-size:1.02rem;line-height:1.5;margin:6px 0 16px;white-space:pre-line;}
+.option{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  background:var(--card2);
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  padding:11px 14px;
+  margin-bottom:9px;
+  cursor:pointer;
+  transition:border-color .15s, background .15s;
+  font-size:0.93rem;
+  line-height:1.4;
+}
+.option:hover{border-color:var(--accent2);}
+.option.selected{border-color:var(--accent2);background:#2c2049;}
+.option input{margin-top:3px; accent-color:var(--accent2);}
+.option.correct-answer{border-color:var(--correct)!important;background:rgba(34,197,94,0.12)!important;}
+.option.incorrect-answer{border-color:var(--incorrect)!important;background:rgba(244,63,94,0.12)!important;}
+.option .mark{margin-left:auto;font-weight:800;font-size:0.85rem;}
+.option .mark.ok{color:var(--correct);}
+.option .mark.no{color:var(--incorrect);}
+.btnrow{display:flex;gap:10px;margin-top:16px;}
+button{
+  border:none;
+  border-radius:12px;
+  padding:11px 18px;
+  font-size:0.92rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .1s, opacity .15s;
+}
+button:active{transform:scale(0.97);}
+button:disabled{opacity:0.4;cursor:not-allowed;}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;flex:1;}
+.btn-secondary{background:var(--card2);color:var(--text);border:1px solid var(--border);flex:1;}
+.rationale{
+  margin-top:16px;
+  background:#150f22;
+  border-left:4px solid var(--accent2);
+  border-radius:10px;
+  padding:12px 14px;
+  font-size:0.87rem;
+  line-height:1.5;
+  color:#dcd0f0;
+  display:none;
+}
+.rationale.show{display:block;}
+.rationale b{color:#f0abfc;}
+.resultbanner{
+  text-align:center;
+  padding:10px;
+  border-radius:10px;
+  font-weight:800;
+  margin-bottom:14px;
+  font-size:0.95rem;
+}
+.resultbanner.ok{background:rgba(34,197,94,0.15);color:#4ade80;}
+.resultbanner.no{background:rgba(244,63,94,0.15);color:#fb7185;}
+#summary-card{display:none;text-align:center;}
+#summary-card h2{color:#f0abfc;}
+#summary-card .score{font-size:2.6rem;font-weight:900;background:linear-gradient(90deg,#f0abfc,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.missed-list{text-align:left;background:var(--card2);border-radius:12px;padding:12px 16px;margin:16px 0;font-size:0.85rem;color:var(--muted);}
+.missed-list li{margin:4px 0;}
+footer{text-align:center;color:var(--muted);font-size:0.72rem;margin-top:30px;}
+.hint{font-size:0.75rem;color:var(--muted);margin-bottom:10px;}
+.retry-row{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1.5px dashed var(--border);
+}
+.retry-row .btn-retry{
+  width:100%;
+  background:linear-gradient(90deg,#db2777,#9333ea);
+  color:#fff;
+  padding:13px;
+  font-size:0.98rem;
+}
+.other-actions{display:flex;gap:10px;margin-top:10px;}
+#empty-state{display:none;text-align:center;color:var(--muted);padding:30px 10px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💜 Ch. 54 Quiz: Thyroid &amp; Parathyroid Disorders</h1>
+<p>NUR 2222/Endocrine • Lewis Med-Surg 12th ed. • Filter by category or topic below</p>
+</header>
+
+<div id="filter-wrap">
+  <div class="tabbar" id="cat-tabs"></div>
+  <select id="topic-select"></select>
+  <div id="filter-summary"></div>
+  <div id="progress-bar-bg"><div id="progress-bar"></div></div>
+  <div id="progress-text">Question 1 of 1</div>
+</div>
+
+<main>
+  <div id="empty-state">
+    <p>😅 No questions match this combination of filters. Try a different topic or category.</p>
+  </div>
+
+  <div class="card" id="quiz-card">
+    <div class="tag" id="q-tag">TOPIC</div>
+    <div class="tag cat" id="q-cat">CATEGORY</div>
+    <div class="qnum" id="q-num">Question 1</div>
+    <div class="stem" id="q-stem">Loading...</div>
+    <div class="hint" id="q-hint"></div>
+    <div id="q-options"></div>
+    <div class="rationale" id="q-rationale"></div>
+    <div class="btnrow">
+      <button class="btn-primary" id="btn-submit">Submit Answer</button>
+      <button class="btn-secondary" id="btn-next" style="display:none;">Next Question →</button>
+    </div>
+  </div>
+
+  <div class="card" id="summary-card">
+    <h2>🎉 Round Complete</h2>
+    <div class="score" id="score-display">0/0</div>
+    <p id="score-msg"></p>
+    <div class="missed-list" id="missed-list-wrap" style="display:none;">
+      <b>Topics you missed:</b>
+      <ul id="missed-list"></ul>
+    </div>
+    <div class="retry-row" id="retry-row" style="display:none;">
+      <button class="btn-retry" id="btn-retry-missed">🔁 Retry Missed Questions Only</button>
+    </div>
+    <div class="other-actions">
+      <button class="btn-secondary" id="btn-restart">Restart This Set</button>
+      <button class="btn-secondary" id="btn-change-filter">Change Topic / Category</button>
+    </div>
+  </div>
+</main>
+
+<footer>Built for active recall practice — attempt every question before revealing the rationale 🩺</footer>
+
+<script>
+const QUESTIONS = [
+{
+  tag:"Goiter", category:"patho", type:"single",
+  stem:"A nurse is teaching a community health class about the most common cause of goiter worldwide. What should the nurse include?",
+  options:[
+    {t:"Dietary iodine deficiency", c:true},
+    {t:"Autoimmune thyroiditis", c:false},
+    {t:"Thyroid cancer", c:false},
+    {t:"Overuse of iodized salt", c:false}
+  ],
+  rationale:"The most common cause of goiter worldwide is a lack of dietary iodine. In the United States, where most people use iodized salt, goiter is more often due to over- or underproduction of thyroid hormones or to nodules that develop in the thyroid gland."
+},
+{
+  tag:"Goiter", category:"patho", type:"single",
+  stem:"A patient has a solitary thyroid nodule that secretes thyroid hormone independently, without regard to TSH levels, and is causing hyperthyroidism. How should the nurse understand this finding?",
+  options:[
+    {t:"This is a toxic nodular goiter — the nodule functions independently of TSH stimulation and is causing hyperthyroidism", c:true},
+    {t:"This is a nontoxic goiter with normal thyroid hormone levels", c:false},
+    {t:"This nodule must be malignant, since benign nodules never secrete hormone", c:false},
+    {t:"This finding is inconsistent with any recognized thyroid condition", c:false}
+  ],
+  rationale:"Nodular goiters are thyroid hormone-secreting nodules that function independently of TSH stimulation. If these nodules cause hyperthyroidism, they are called toxic nodular goiters. The nodules are usually benign follicular adenomas."
+},
+{
+  tag:"Thyroiditis", category:"diagnostic", type:"single",
+  stem:"A patient has a goiter with fatigue, weight gain, and cold intolerance. Lab results show low T4 and T3 with a high TSH level, and antithyroid antibodies are present. Which condition is most consistent with this pattern?",
+  options:[
+    {t:"Subacute granulomatous thyroiditis", c:false},
+    {t:"Hashimoto thyroiditis", c:true},
+    {t:"Silent postpartum thyroiditis in its early phase", c:false},
+    {t:"Graves disease", c:false}
+  ],
+  rationale:"In Hashimoto thyroiditis, T4 and T3 levels are usually low and the TSH level is high, with antithyroid antibodies present — this is the most common cause of hypothyroid goiters in the United States. Subacute and silent thyroiditis initially show elevated (not low) T4/T3 that decreases over time."
+},
+{
+  tag:"Thyroiditis", category:"teaching", type:"sata",
+  stem:"A nurse is teaching a patient newly diagnosed with Hashimoto thyroiditis about their increased risk for other conditions. Which associated autoimmune conditions should the nurse mention? Select all that apply.",
+  options:[
+    {t:"Addison disease", c:true},
+    {t:"Pernicious anemia", c:true},
+    {t:"Graves disease", c:true},
+    {t:"Type 2 diabetes mellitus", c:false},
+    {t:"Osteoarthritis", c:false}
+  ],
+  rationale:"The patient with Hashimoto thyroiditis is at risk for other autoimmune diseases, such as Addison disease, pernicious anemia, or Graves disease. Type 2 diabetes and osteoarthritis are not autoimmune conditions associated with Hashimoto thyroiditis."
+},
+{
+  tag:"Thyroiditis", category:"treatment", type:"single",
+  stem:"A patient with subacute thyroiditis has severe thyroid pain that has not responded to NSAIDs. What is an appropriate next step in symptom management?",
+  options:[
+    {t:"Corticosteroids, such as prednisone up to 40 mg/day, to relieve discomfort", c:true},
+    {t:"Immediate total thyroidectomy", c:false},
+    {t:"High-dose levothyroxine regardless of thyroid function", c:false},
+    {t:"Radioactive iodine therapy", c:false}
+  ],
+  rationale:"In the subacute and acute forms of thyroiditis, NSAIDs (aspirin, naproxen) can relieve symptoms. With more severe pain, corticosteroids (e.g., prednisone up to 40 mg/day) can relieve discomfort."
+},
+{
+  tag:"Hyperthyroidism / Graves", category:"patho", type:"single",
+  stem:"A nurse explains to a student why Graves disease causes sustained overproduction of thyroid hormone. What is the correct mechanism?",
+  options:[
+    {t:"The patient develops antibodies to TSH receptors, which attach to the receptors and stimulate the thyroid gland to continuously release T3 and T4", c:true},
+    {t:"A benign tumor directly secretes thyroid hormone independent of any receptor stimulation", c:false},
+    {t:"The pituitary gland secretes excess TSH, directly causing the disease", c:false},
+    {t:"Iodine deficiency causes the thyroid to compensate by overproducing hormone", c:false}
+  ],
+  rationale:"In Graves disease, the patient develops antibodies to TSH receptors. These antibodies attach to the receptors and stimulate the thyroid gland to release T3, T4, or both, leading to the manifestations of thyrotoxicosis. It is an autoimmune disease, accounting for 75% of hyperthyroidism cases."
+},
+{
+  tag:"Hyperthyroidism / Graves", category:"patho", type:"single",
+  stem:"A patient with Graves disease has protruding eyeballs, difficulty closing the eyelids fully, and reports double vision. What is the underlying mechanism for these findings?",
+  options:[
+    {t:"Increased fat deposits and fluid in the orbital tissues and ocular muscles increase pressure and force the eyeballs outward, while changes in the ocular muscles cause weakness leading to diplopia", c:true},
+    {t:"A tumor is compressing the optic nerve directly", c:false},
+    {t:"This is an unrelated, coincidental eye condition", c:false},
+    {t:"Excess TSH is directly infiltrating the orbital tissue", c:false}
+  ],
+  rationale:"Exophthalmos results from increased fat deposits and fluid (edema) in the orbital tissues and ocular muscles. The increased pressure forces the eyeballs outward. Changes in the ocular muscles result in muscle weakness, causing diplopia. If the eyelids do not close completely, the exposed corneal surfaces become dry and irritated, risking corneal ulcers and vision loss."
+},
+{
+  tag:"Hyperthyroidism / Graves", category:"patho", type:"single",
+  stem:"An 78-year-old patient presents with anorexia, weight loss, apathy, and new confusion. The family says the patient seems depressed. Lab results reveal a suppressed TSH and elevated free T4. What should the nurse recognize about this presentation?",
+  options:[
+    {t:"This represents a form of \"apathetic\" hyperthyroidism, where older adults present with anorexia, apathy, lassitude, depression, or confusion rather than the classic nervous, hyperactive picture seen in younger adults", c:true},
+    {t:"These labs and symptoms are inconsistent with each other and one set must be an error", c:false},
+    {t:"Older adults never develop hyperthyroidism, so another diagnosis should be pursued", c:false},
+    {t:"This presentation confirms dementia and thyroid labs are incidental", c:false}
+  ],
+  rationale:"Manifestations of hyperthyroidism in older adults often differ from younger adults — common symptoms include anorexia, weight loss, apathy, lassitude, depression, and confusion, unlike the nervousness/irritability more typical in younger patients. In confused, agitated older adults, dementia may be mistakenly suspected, delaying the correct diagnosis."
+},
+{
+  tag:"Hyperthyroidism / Graves", category:"diagnostic", type:"single",
+  stem:"A radioactive iodine uptake (RAIU) test is performed on two patients with goiters. Patient A shows diffuse, homogeneous uptake of 60%. Patient B shows an uptake of less than 2%. What do these results suggest?",
+  options:[
+    {t:"Patient A likely has Graves disease; Patient B likely has thyroiditis", c:true},
+    {t:"Patient A likely has thyroiditis; Patient B likely has Graves disease", c:false},
+    {t:"Both patients likely have the same condition", c:false},
+    {t:"RAIU results cannot differentiate between these conditions", c:false}
+  ],
+  rationale:"The RAIU test can distinguish Graves disease from other forms of thyroiditis. The patient with Graves disease shows a diffuse, homogeneous uptake of 35% to 95%, while the patient with thyroiditis shows an uptake of less than 2%. A patient with a nodular goiter has an uptake in the high-normal range."
+},
+{
+  tag:"Thyroid Storm", category:"patho", type:"single",
+  stem:"A patient with a history of hyperthyroidism develops a fever of 104°F, severe tachycardia, agitation, and vomiting three days after emergency surgery. What condition should the nurse suspect?",
+  options:[
+    {t:"Acute thyrotoxicosis (thyroid storm) — a life-threatening emergency often triggered by stressors like surgery in a patient with preexisting hyperthyroidism", c:true},
+    {t:"A normal, expected postoperative recovery course", c:false},
+    {t:"Myxedema coma", c:false},
+    {t:"Hypoparathyroidism", c:false}
+  ],
+  rationale:"Acute thyrotoxicosis (thyroid storm) is thought to result from stressors (e.g., infection, trauma, surgery) in a patient with preexisting hyperthyroidism. Manifestations include severe tachycardia, heart failure, shock, hyperthermia (up to 106°F), agitation, delirium, seizures, abdominal pain, vomiting, diarrhea, and coma. It is a life-threatening emergency, though death is rare with early treatment."
+},
+{
+  tag:"Thyroid Storm", category:"treatment", type:"sata",
+  stem:"A patient is being treated in the ICU for acute thyrotoxicosis. Which interventions should the nurse anticipate as part of emergency management? Select all that apply.",
+  options:[
+    {t:"Begin fluid replacement with isotonic saline infusions containing dextrose", c:true},
+    {t:"Apply continuous O2 saturation and ECG monitoring", c:true},
+    {t:"Apply ice packs and cooling blankets to reduce fever", c:true},
+    {t:"Give prescribed beta-adrenergic blockers, antithyroid agents, iodine compounds, and glucocorticoids", c:true},
+    {t:"Monitor urine output hourly", c:true},
+    {t:"Encourage frequent visitors to keep the patient's spirits up", c:false}
+  ],
+  rationale:"Emergency management of acute thyrotoxicosis includes fluid replacement with isotonic saline/dextrose, continuous O2 saturation and ECG monitoring, ice packs/cooling blankets for fever, hourly urine output monitoring, and giving prescribed drugs (beta-blockers, antithyroid agents, iodine compounds, glucocorticoids). Visitors should be restricted, if needed, to decrease O2 demands by decreasing anxiety — not encouraged."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"treatment", type:"single",
+  stem:"A pregnant patient in her first trimester is diagnosed with hyperthyroidism and needs rapid symptom control. Which antithyroid drug is generally preferred in this situation?",
+  options:[
+    {t:"Propylthiouracil, since it is generally used for patients in the first trimester of pregnancy or who need a rapid reduction in symptoms", c:true},
+    {t:"Methimazole, since it is preferred in all pregnant patients", c:false},
+    {t:"Radioactive iodine therapy", c:false},
+    {t:"Levothyroxine", c:false}
+  ],
+  rationale:"Propylthiouracil is generally used for patients who are in the first trimester of pregnancy, had an adverse reaction to methimazole, or need a rapid reduction in symptoms. It is first-line therapy in thyrotoxicosis since it blocks the peripheral conversion of T4 to T3, achieving a euthyroid state more quickly, though it must be taken 3 times per day (compared to methimazole's single daily dose)."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"treatment", type:"single",
+  stem:"A patient with hyperthyroidism is scheduled for a subtotal thyroidectomy and will receive iodine (SSKI) preoperatively. What is the primary purpose of this preoperative iodine therapy?",
+  options:[
+    {t:"To decrease the vascularity of the thyroid gland, making surgery safer and reducing hemorrhage risk", c:true},
+    {t:"To permanently cure the patient's hyperthyroidism without the need for surgery", c:false},
+    {t:"To replace the need for antithyroid drugs entirely", c:false},
+    {t:"To increase thyroid hormone synthesis before surgery", c:false}
+  ],
+  rationale:"Iodine is used with other antithyroid drugs to prepare the patient for thyroidectomy. Large doses inhibit T3/T4 synthesis and block hormone release, and it decreases the vascularity of the thyroid gland, making surgery safer and easier. The maximal effect occurs within 1-2 weeks, but long-term iodine therapy is not effective for controlling hyperthyroidism due to reduced therapeutic effect over time."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"treatment", type:"sata",
+  stem:"A patient receiving iodine (SSKI) therapy should be monitored for which signs of iodine toxicity? Select all that apply.",
+  options:[
+    {t:"Swelling of the buccal mucosa and other mucous membranes", c:true},
+    {t:"Excess salivation", c:true},
+    {t:"Nausea and vomiting", c:true},
+    {t:"Skin reactions", c:true},
+    {t:"Severe hypertension", c:false}
+  ],
+  rationale:"Signs of iodine toxicity include swelling of the buccal mucosa and other mucous membranes, excess salivation, nausea and vomiting, and skin reactions. If toxicity occurs, the nurse should stop administering iodine and notify the HCP. Severe hypertension is not a recognized sign of iodine toxicity."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"treatment", type:"single",
+  stem:"A hyperthyroid patient with a history of asthma needs a beta-adrenergic blocker for symptomatic relief. Which drug is preferred?",
+  options:[
+    {t:"Atenolol, since it is preferred in hyperthyroid patients with asthma or heart disease", c:true},
+    {t:"Propranolol, since it is preferred in all hyperthyroid patients regardless of comorbidities", c:false},
+    {t:"Either drug is equally appropriate with no difference for asthma patients", c:false},
+    {t:"Beta-blockers should never be used in hyperthyroidism", c:false}
+  ],
+  rationale:"Beta-adrenergic blockers are used for symptomatic relief of thyrotoxicosis by blocking sympathetic nervous stimulation effects (tachycardia, nervousness, irritability, tremors). Propranolol is usually given with antithyroid agents, but atenolol is the preferred beta-adrenergic blocker for use in the hyperthyroid patient with asthma or heart disease due to its more cardioselective profile."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"treatment", type:"single",
+  stem:"A patient begins radioactive iodine (RAI) therapy for Graves disease. The nurse explains that the maximum therapeutic effect may take how long to appear, and what should be done in the meantime?",
+  options:[
+    {t:"Up to 3 months; the patient is usually treated with antithyroid drugs and propranolol before and during this period until radiation effects become apparent", c:true},
+    {t:"24 hours; no additional medications are needed", c:false},
+    {t:"Effects are immediate, so no bridging therapy is needed", c:false},
+    {t:"Up to 3 years, requiring lifelong antithyroid drug therapy alongside RAI", c:false}
+  ],
+  rationale:"RAI has a delayed response — the maximum effect may not be seen for up to 3 months. For this reason, the patient is usually treated with antithyroid drugs and propranolol before and for 3 months after starting RAI until the effects of radiation become apparent."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"teaching", type:"sata",
+  stem:"A nurse is teaching a patient about home precautions after receiving radioactive iodine (RAI) therapy to limit radiation exposure to others. Which instructions are correct? Select all that apply.",
+  options:[
+    {t:"Use private toilet facilities if possible, and flush 2-3 times after each use", c:true},
+    {t:"Launder towels, bed linens, and clothes separately and daily", c:true},
+    {t:"Avoid preparing food for others that requires prolonged handling with bare hands", c:true},
+    {t:"Avoid being close to pregnant women and children for 7 days after therapy", c:true},
+    {t:"Resume normal close contact with all family members immediately after treatment", c:false}
+  ],
+  rationale:"To limit radiation exposure to others after RAI therapy, patients should use private toilet facilities if possible, flush 2-3 times after each use, separately launder towels/linens/clothes daily, avoid preparing food for others requiring prolonged bare-hand handling, and avoid being close to pregnant women and children for 7 days after therapy."
+},
+{
+  tag:"Post-Thyroid-Surgery", category:"treatment", type:"single",
+  stem:"A patient develops hoarseness and difficulty breathing immediately after a thyroidectomy. Assessment reveals bilateral vocal cord paralysis from recurrent laryngeal nerve damage. What is the priority intervention?",
+  options:[
+    {t:"Immediate tracheostomy, since bilateral vocal cord paralysis causes spastic airway obstruction requiring emergency airway management", c:true},
+    {t:"Reassurance that hoarseness is expected and will resolve without intervention", c:false},
+    {t:"Administration of oral pain medication", c:false},
+    {t:"Discharge planning, since this is a minor complication", c:false}
+  ],
+  rationale:"Recurrent laryngeal nerve damage leads to vocal cord paralysis. If both cords are paralyzed, spastic airway obstruction will occur, requiring an immediate tracheostomy. Airway obstruction after thyroid surgery is an emergency — O2, suction equipment, and a tracheostomy tray should always be kept available in the patient's room."
+},
+{
+  tag:"Post-Thyroid-Surgery", category:"patho", type:"sata",
+  stem:"A patient develops tingling around the mouth and in the fingers, along with muscular twitching, two days after a thyroidectomy. Which findings and assessments are relevant to this presentation? Select all that apply.",
+  options:[
+    {t:"This may indicate hypocalcemia from inadvertent damage to or removal of the parathyroid glands during surgery", c:true},
+    {t:"The nurse should check for a positive Trousseau sign and Chvostek sign", c:true},
+    {t:"IV calcium (calcium gluconate or calcium chloride) should be available for immediate use", c:true},
+    {t:"Laryngeal stridor may occur and could be related to tetany from hypocalcemia", c:true},
+    {t:"This presentation is unrelated to the thyroid surgery and requires no further workup", c:false}
+  ],
+  rationale:"Tetany and hypocalcemia signs (tingling in toes/fingers/around the mouth, muscular twitching, apprehension) after thyroid surgery suggest parathyroid gland damage or removal. The nurse should check Trousseau and Chvostek signs, and IV calcium salts should be readily available since laryngeal stridor may occur related to hypocalcemic tetany."
+},
+{
+  tag:"Post-Thyroid-Surgery", category:"treatment", type:"single",
+  stem:"A nurse is positioning a patient after a subtotal thyroidectomy. What is the most appropriate positioning approach?",
+  options:[
+    {t:"Semi-Fowler position, with the head and neck supported by pillows, avoiding neck flexion to prevent tension on the suture line", c:true},
+    {t:"Flat supine position with the neck extended as much as possible", c:false},
+    {t:"Prone position to reduce swelling", c:false},
+    {t:"Trendelenburg position to promote venous drainage from the surgical site", c:false}
+  ],
+  rationale:"Postoperative nursing management after thyroid surgery includes keeping the patient in a semi-Fowler position, supporting the head and neck with pillows, and avoiding neck flexion to prevent tension on the suture line."
+},
+{
+  tag:"Hyperthyroidism Treatment", category:"treatment", type:"single",
+  stem:"A hyperthyroid patient is being counseled on nutrition therapy. What is the most appropriate dietary recommendation?",
+  options:[
+    {t:"A high-calorie diet (4000-5000 cal/day) with 6 full meals a day, high in protein, carbohydrates, minerals, and vitamins, avoiding highly seasoned or high-fiber foods and caffeine", c:true},
+    {t:"A low-calorie, low-protein diet to reduce metabolic demand", c:false},
+    {t:"Unrestricted caffeine intake to help combat fatigue", c:false},
+    {t:"A high-fiber diet to further stimulate GI motility", c:false}
+  ],
+  rationale:"With the increased metabolic rate in hyperthyroid patients, a high-calorie diet (4000-5000 cal/day) may be needed with 6 full meals a day and snacks high in protein, carbohydrates, minerals, and vitamins. Patients should avoid highly seasoned and high-fiber foods (they further stimulate the already hyperactive GI tract) and caffeine (worsens restlessness and sleep problems)."
+},
+{
+  tag:"Hypothyroidism", category:"diagnostic", type:"single",
+  stem:"Two patients have hypothyroidism. Patient A has a high TSH and low T4. Patient B has a low TSH and low T4. How should the nurse interpret these findings?",
+  options:[
+    {t:"Patient A has primary hypothyroidism (the defect is in the thyroid gland); Patient B has secondary hypothyroidism (the defect is in the pituitary or hypothalamus)", c:true},
+    {t:"Both patients have the same type of hypothyroidism", c:false},
+    {t:"Patient A has secondary hypothyroidism; Patient B has primary hypothyroidism", c:false},
+    {t:"These lab patterns are inconsistent with any form of hypothyroidism", c:false}
+  ],
+  rationale:"Serum TSH is high when the defect is in the thyroid (primary hypothyroidism) and low when the defect is in the pituitary or hypothalamus (secondary hypothyroidism). T4 is low in both types."
+},
+{
+  tag:"Hypothyroidism", category:"patho", type:"single",
+  stem:"In the United States, what is the most common cause of primary hypothyroidism?",
+  options:[
+    {t:"Atrophy of the thyroid gland resulting from Hashimoto thyroiditis or Graves disease", c:true},
+    {t:"Dietary iodine deficiency", c:false},
+    {t:"Pituitary tumors", c:false},
+    {t:"Hypothalamic dysfunction", c:false}
+  ],
+  rationale:"Iodine deficiency is the most common cause of hypothyroidism worldwide. However, in the United States, the most common cause of primary hypothyroidism is atrophy of the thyroid gland, resulting from Hashimoto thyroiditis or Graves disease — both autoimmune diseases that destroy the thyroid gland."
+},
+{
+  tag:"Myxedema Coma", category:"patho", type:"single",
+  stem:"A patient with known hypothyroidism is found with a low temperature, hypotension, and hypoventilation after being started on a new sedative medication. What should the nurse suspect?",
+  options:[
+    {t:"Myxedema coma, a medical emergency that can be triggered by drugs such as opioids, tranquilizers, and barbiturates, cold exposure, infection, or trauma", c:true},
+    {t:"A normal reaction to the sedative with no further concern", c:false},
+    {t:"Thyroid storm", c:false},
+    {t:"Hyperparathyroidism", c:false}
+  ],
+  rationale:"Myxedema coma is a medical emergency where the mental sluggishness, drowsiness, and lethargy of hypothyroidism progress to a notable impairment of consciousness or coma. Causes include infection, drugs (especially opioids, tranquilizers, and barbiturates), exposure to cold, and trauma. Manifestations include low temperature, hypotension, and hypoventilation. Treatment requires supporting vital functions and giving IV thyroid hormone replacement."
+},
+{
+  tag:"Levothyroxine", category:"treatment", type:"single",
+  stem:"A patient with coronary artery disease is starting levothyroxine for newly diagnosed hypothyroidism. What is the priority nursing consideration?",
+  options:[
+    {t:"Start with a low dose and carefully monitor heart rate and for chest pain, since the usual dose may increase myocardial oxygen demand and cause angina or dysrhythmias in a patient with compromised cardiac status", c:true},
+    {t:"Start with the full maintenance dose immediately to correct the deficiency as quickly as possible", c:false},
+    {t:"Cardiac status has no bearing on levothyroxine dosing decisions", c:false},
+    {t:"Levothyroxine is contraindicated in all patients with cardiac disease", c:false}
+  ],
+  rationale:"When beginning thyroid hormone therapy, the first dosages are low to avoid increases in resting heart rate and BP. In the patient with compromised cardiac status, careful monitoring is needed when starting and adjusting the dosage, because the usual dose may increase myocardial O2 demand, potentially causing angina and dysrhythmias. The nurse should monitor heart rate and report a pulse greater than 100 beats/min or an irregular heartbeat."
+},
+{
+  tag:"Levothyroxine", category:"treatment", type:"sata",
+  stem:"A patient taking levothyroxine develops symptoms of overdose. Which findings should the nurse expect, given that overdose manifestations mirror hyperthyroidism? Select all that apply.",
+  options:[
+    {t:"Tachycardia and palpitations", c:true},
+    {t:"Weight loss", c:true},
+    {t:"Nervousness, tremors, and insomnia", c:true},
+    {t:"Chest pain or angina", c:true},
+    {t:"Heat intolerance and diarrhea", c:true},
+    {t:"Bradycardia and weight gain", c:false}
+  ],
+  rationale:"The manifestations of levothyroxine overdose are the same as hyperthyroidism: tachycardia/palpitations, weight loss, nervousness/tremors/insomnia, chest pain/angina, and heat intolerance/diarrhea. Bradycardia and weight gain are hypothyroid findings, the opposite of overdose."
+},
+{
+  tag:"Hypothyroidism", category:"teaching", type:"single",
+  stem:"A nurse is teaching a hypothyroid patient about managing constipation. Why should the nurse specifically caution against using enemas?",
+  options:[
+    {t:"Enemas cause vagal stimulation, which can be hazardous if the patient has underlying heart disease", c:true},
+    {t:"Enemas are completely ineffective for constipation in hypothyroid patients", c:false},
+    {t:"Enemas increase the risk of thyroid storm", c:false},
+    {t:"Enemas interfere with levothyroxine absorption specifically", c:false}
+  ],
+  rationale:"Teaching for hypothyroid patients regarding constipation includes gradual increase in activity/exercise, increased dietary fiber, stool softeners, and a regular bowel elimination time, while telling the patient to avoid using enemas. Enemas cause vagal stimulation, which can be hazardous if heart disease is present — a real concern in hypothyroidism given its cardiovascular effects."
+},
+{
+  tag:"Hypothyroidism", category:"teaching", type:"sata",
+  stem:"A nurse is providing discharge teaching to a patient newly diagnosed with hypothyroidism. Which statements by the patient indicate correct understanding? Select all that apply.",
+  options:[
+    {t:"\"I will take my thyroid medication in the morning before eating.\"", c:true},
+    {t:"\"I should not switch brands of my thyroid hormone without talking to my provider, since bioavailability may differ.\"", c:true},
+    {t:"\"I need to keep my home comfortably warm since I may have trouble tolerating cold.\"", c:true},
+    {t:"\"I will need to take this medication for the rest of my life.\"", c:true},
+    {t:"\"If I notice I'm losing weight, I can increase my dose on my own to keep losing weight.\"", c:false},
+    {t:"\"I can stop the medication abruptly if I start feeling better.\"", c:false}
+  ],
+  rationale:"Hypothyroidism teaching includes taking thyroid hormone in the morning before food, not switching brands (bioavailability may differ), keeping a warm environment (cold intolerance), and understanding the need for lifelong therapy. Patients should be cautioned against doubling doses for any reason, including desired weight loss, and against abruptly stopping medication."
+},
+{
+  tag:"Hypothyroidism", category:"teaching", type:"single",
+  stem:"A patient with diabetes is starting thyroid hormone replacement therapy for newly diagnosed hypothyroidism. What should the nurse teach regarding glucose monitoring?",
+  options:[
+    {t:"Check glucose levels at least daily, since returning to a euthyroid state often increases insulin requirements", c:true},
+    {t:"No change in glucose monitoring is needed once thyroid therapy begins", c:false},
+    {t:"Insulin requirements will decrease significantly once the patient becomes euthyroid", c:false},
+    {t:"Glucose monitoring should be discontinued during thyroid hormone titration", c:false}
+  ],
+  rationale:"The patient with diabetes should check glucose levels at least daily because the return to the euthyroid state often increases insulin requirements."
+},
+{
+  tag:"Thyroid Cancer", category:"patho", type:"single",
+  stem:"A patient is diagnosed with thyroid cancer. The nurse recalls that which type accounts for the majority of thyroid cancer cases and tends to grow slowly?",
+  options:[
+    {t:"Papillary thyroid cancer", c:true},
+    {t:"Follicular thyroid cancer", c:false},
+    {t:"Medullary thyroid cancer", c:false},
+    {t:"Anaplastic thyroid cancer", c:false}
+  ],
+  rationale:"Papillary thyroid cancer is the most common type, accounting for about 70-80% of thyroid cancers. It tends to grow slowly and initially spreads to lymph nodes in the neck."
+},
+{
+  tag:"Thyroid Cancer", category:"diagnostic", type:"single",
+  stem:"A thyroid scan shows a \"cold\" nodule that does not take up radioactive iodine. What is the clinical significance of this finding?",
+  options:[
+    {t:"There is a higher risk that the nodule is cancerous, unlike \"hot\" nodules that take up RAI and are almost always benign", c:true},
+    {t:"\"Cold\" nodules are always benign and require no further workup", c:false},
+    {t:"This finding indicates the patient is hypothyroid", c:false},
+    {t:"\"Cold\" nodules always indicate Graves disease", c:false}
+  ],
+  rationale:"A thyroid scan shows whether nodules are \"hot\" or \"cold.\" \"Hot\" tumors take up RAI and are almost always benign. If the nodule does not take up RAI, it appears \"cold,\" and there is a higher risk of it being cancerous."
+},
+{
+  tag:"MEN", category:"patho", type:"single",
+  stem:"A patient with medullary thyroid carcinoma is later found to have a pheochromocytoma. What underlying condition should the nurse suspect, and what should be recommended for family members?",
+  options:[
+    {t:"Multiple endocrine neoplasia (MEN) type 2 — family members should be encouraged to have genetic testing and regular thyroid screening", c:true},
+    {t:"This is coincidental and unrelated; no family screening is needed", c:false},
+    {t:"MEN type 1, which is unrelated to medullary thyroid cancer", c:false},
+    {t:"Graves disease with an unrelated adrenal tumor", c:false}
+  ],
+  rationale:"Persons with MEN type 2 often have medullary thyroid carcinoma and may develop pheochromocytoma (a tumor of the adrenal glands). MEN is an inherited condition, so in families with a history of medullary thyroid cancer, family members are encouraged to have genetic testing and thyroid screening on a regular basis."
+},
+{
+  tag:"Hyperparathyroidism", category:"patho", type:"single",
+  stem:"A 45-year-old woman presents with fatigue, constipation, muscle weakness in her proximal lower extremities, and a history of recurrent kidney stones. Labs show elevated PTH and elevated serum calcium. What is the most likely underlying cause?",
+  options:[
+    {t:"Primary hyperparathyroidism, most commonly caused by a benign parathyroid adenoma", c:true},
+    {t:"Secondary hyperparathyroidism caused by chronic kidney disease", c:false},
+    {t:"Hypoparathyroidism", c:false},
+    {t:"Graves disease", c:false}
+  ],
+  rationale:"Primary hyperparathyroidism is due to increased PTH secretion leading to problems with calcium, phosphate, and bone metabolism. It affects twice as many women as men, with peak incidence in the 40s and 50s. The most common cause is a benign tumor (adenoma) in the parathyroid gland. High PTH causes hypercalcemia, leading to symptoms like fatigue, constipation, proximal muscle weakness, and kidney stones from hypercalciuria."
+},
+{
+  tag:"Hyperparathyroidism", category:"diagnostic", type:"single",
+  stem:"A patient with suspected primary hyperparathyroidism has lab work drawn. Which combination of findings would the nurse expect?",
+  options:[
+    {t:"Elevated serum calcium (greater than 10 mg/dL) with a low serum phosphorus (less than 3 mg/dL)", c:true},
+    {t:"Low serum calcium with elevated serum phosphorus", c:false},
+    {t:"Both calcium and phosphorus elevated together", c:false},
+    {t:"Both calcium and phosphorus decreased together", c:false}
+  ],
+  rationale:"In hyperparathyroidism, serum calcium levels usually exceed 10 mg/dL (2.50 mmol/L). Because of its inverse relationship with calcium, the serum phosphorus level is usually less than 3 mg/dL (0.1 mmol/L)."
+},
+{
+  tag:"Hyperparathyroidism", category:"treatment", type:"sata",
+  stem:"Which criteria would support recommending surgical parathyroidectomy for a patient with primary hyperparathyroidism? Select all that apply.",
+  options:[
+    {t:"Serum calcium more than 1 mg/dL above the upper limit of normal", c:true},
+    {t:"Hypercalciuria greater than 400 mg/day", c:true},
+    {t:"Markedly reduced bone mineral density", c:true},
+    {t:"Overt symptoms such as neuromuscular effects or kidney stones", c:true},
+    {t:"Age under 50 years", c:true},
+    {t:"A completely asymptomatic patient with calcium at the upper limit of normal", c:false}
+  ],
+  rationale:"Criteria for surgery in primary hyperparathyroidism include increased serum calcium levels (more than 1 mg/dL above the upper limit of normal), hypercalciuria (greater than 400 mg/day), markedly reduced bone mineral density, overt symptoms (e.g., neuromuscular effects, kidney stones), or age under 50 years. A completely asymptomatic patient with calcium at the upper limit of normal does not meet these criteria; a conservative approach may be used instead."
+},
+{
+  tag:"Hyperparathyroidism", category:"treatment", type:"single",
+  stem:"A patient with dangerously high serum calcium levels from hyperparathyroidism needs rapid correction. Which treatment would the nurse anticipate?",
+  options:[
+    {t:"IV sodium chloride with loop diuretics such as furosemide to increase urinary calcium excretion", c:true},
+    {t:"Oral calcium supplements", c:false},
+    {t:"Thiazide diuretics, which increase calcium reabsorption", c:false},
+    {t:"Vitamin D supplementation", c:false}
+  ],
+  rationale:"Severe hypercalcemia is managed with IV sodium chloride and loop diuretics, such as furosemide, to increase urinary calcium excretion. Thiazide diuretics would be inappropriate since they increase calcium reabsorption (worsening hypercalcemia), unlike loop diuretics which increase excretion."
+},
+{
+  tag:"Hypoparathyroidism", category:"patho", type:"single",
+  stem:"What is the most common cause of hypoparathyroidism?",
+  options:[
+    {t:"Iatrogenic causes, such as accidental removal of the parathyroid glands or damage to their vascular supply during neck surgery", c:true},
+    {t:"Idiopathic atrophy of the glands", c:false},
+    {t:"Severe hypercalcemia", c:false},
+    {t:"Excess vitamin D intake", c:false}
+  ],
+  rationale:"The most common cause of hypoparathyroidism is iatrogenic — this may include accidental removal of the parathyroid glands or damage to the vascular supply of the glands during neck surgery (e.g., thyroidectomy). Idiopathic hypoparathyroidism is rare."
+},
+{
+  tag:"Hypoparathyroidism", category:"treatment", type:"single",
+  stem:"A patient with mild tetany from hypocalcemia is taught to breathe in and out of a paper bag for symptom relief. What is the physiologic rationale for this intervention?",
+  options:[
+    {t:"Rebreathing reduces CO2 excretion, increasing carbonic acid levels and lowering blood pH, which enhances calcium ionization and increases the amount of active, ionized calcium available", c:true},
+    {t:"Rebreathing directly raises total serum calcium levels", c:false},
+    {t:"Rebreathing has no physiologic effect and works only through distraction", c:false},
+    {t:"Rebreathing increases blood pH, which is what relieves the tetany", c:false}
+  ],
+  rationale:"Rebreathing may partially relieve acute neuromuscular symptoms from hypocalcemia, including muscle cramps and mild tetany. This reduces CO2 excretion from the lungs, increases carbonic acid levels in the blood, and lowers the pH. A lower pH (acidic environment) enhances calcium ionization, causing more total body calcium to be available in the active, ionized form — even though total calcium doesn't change."
+},
+{
+  tag:"Hypoparathyroidism", category:"treatment", type:"single",
+  stem:"A patient with postoperative tetany from hypoparathyroidism is receiving IV calcium. The patient also takes digoxin at home. What is the priority nursing consideration?",
+  options:[
+    {t:"Give the IV calcium slowly with continuous ECG monitoring, since high serum calcium levels can cause hypotension, dysrhythmias, or cardiac arrest, and patients on digoxin are especially vulnerable", c:true},
+    {t:"Digoxin use has no bearing on IV calcium administration", c:false},
+    {t:"IV calcium should be given as a rapid bolus for fastest symptom relief", c:false},
+    {t:"Digoxin should be given at a higher dose to work synergistically with the calcium", c:false}
+  ],
+  rationale:"Give IV calcium slowly. Use ECG monitoring when giving calcium, because high serum calcium levels can cause hypotension, serious dysrhythmias, or cardiac arrest. The patient who takes digoxin is especially vulnerable, since calcium can potentiate digoxin's cardiac effects, increasing toxicity risk."
+}
+];
+// ---------- Engine ----------
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+const CATEGORY_LABELS = {
+  all: "All",
+  patho: "Pathophysiology",
+  treatment: "Treatment",
+  teaching: "Teaching / Guidelines",
+  diagnostic: "Diagnostic",
+  sata: "SATA Only"
+};
+
+let optionOrders = {};
+QUESTIONS.forEach((q,i)=>{ optionOrders[i] = shuffle(q.options.map((_,j)=>j)); });
+
+let activeCategory = 'all';
+let activeTopic = 'all';
+let queue = [];
+let currentIdx = 0;
+let score = 0;
+let answered = false;
+let selected = new Set();
+let missedIndices = [];
+let retryMode = false;
+let retryQueue = [];
+
+const els = {
+  catTabs: document.getElementById('cat-tabs'),
+  topicSelect: document.getElementById('topic-select'),
+  filterSummary: document.getElementById('filter-summary'),
+  progressBar: document.getElementById('progress-bar'),
+  progressText: document.getElementById('progress-text'),
+  quizCard: document.getElementById('quiz-card'),
+  summaryCard: document.getElementById('summary-card'),
+  emptyState: document.getElementById('empty-state'),
+  tag: document.getElementById('q-tag'),
+  cat: document.getElementById('q-cat'),
+  num: document.getElementById('q-num'),
+  stem: document.getElementById('q-stem'),
+  hint: document.getElementById('q-hint'),
+  optionsWrap: document.getElementById('q-options'),
+  rationale: document.getElementById('q-rationale'),
+  btnSubmit: document.getElementById('btn-submit'),
+  btnNext: document.getElementById('btn-next'),
+  scoreDisplay: document.getElementById('score-display'),
+  scoreMsg: document.getElementById('score-msg'),
+  missedListWrap: document.getElementById('missed-list-wrap'),
+  missedList: document.getElementById('missed-list'),
+  retryRow: document.getElementById('retry-row'),
+  btnRetryMissed: document.getElementById('btn-retry-missed'),
+  btnRestart: document.getElementById('btn-restart'),
+  btnChangeFilter: document.getElementById('btn-change-filter')
+};
+
+function buildTabs(){
+  const cats = ['all','patho','treatment','teaching','diagnostic','sata'];
+  els.catTabs.innerHTML = '';
+  cats.forEach(c=>{
+    const btn = document.createElement('button');
+    btn.className = 'tabbtn' + (c==='sata' ? ' sata-tab' : '') + (c===activeCategory ? ' active' : '');
+    btn.textContent = CATEGORY_LABELS[c];
+    btn.addEventListener('click', ()=>{
+      activeCategory = c;
+      activeTopic = 'all';
+      resetSession();
+    });
+    els.catTabs.appendChild(btn);
+  });
+}
+
+function buildTopicSelect(){
+  const topics = [...new Set(QUESTIONS.map(q=>q.tag))].sort();
+  els.topicSelect.innerHTML = '';
+  const optAll = document.createElement('option');
+  optAll.value = 'all';
+  optAll.textContent = 'All Topics';
+  els.topicSelect.appendChild(optAll);
+  topics.forEach(t=>{
+    const opt = document.createElement('option');
+    opt.value = t;
+    opt.textContent = t;
+    els.topicSelect.appendChild(opt);
+  });
+  els.topicSelect.value = activeTopic;
+  els.topicSelect.addEventListener('change', ()=>{
+    activeTopic = els.topicSelect.value;
+    resetSession();
+  });
+}
+
+function computeQueue(){
+  return QUESTIONS.map((_,i)=>i).filter(i=>{
+    const q = QUESTIONS[i];
+    const catMatch = activeCategory==='all' ? true :
+                      activeCategory==='sata' ? q.type==='sata' :
+                      q.category===activeCategory;
+    const topicMatch = activeTopic==='all' ? true : q.tag===activeTopic;
+    return catMatch && topicMatch;
+  });
+}
+
+function resetSession(){
+  retryMode = false;
+  retryQueue = [];
+  currentIdx = 0;
+  score = 0;
+  missedIndices = [];
+  queue = computeQueue();
+  buildTabs();
+  els.topicSelect.value = activeTopic;
+  updateFilterSummary();
+  els.summaryCard.style.display = 'none';
+  if(queue.length===0){
+    els.quizCard.style.display = 'none';
+    els.emptyState.style.display = 'block';
+    els.progressBar.style.width = '0%';
+    els.progressText.textContent = 'No questions';
+    return;
+  }
+  els.emptyState.style.display = 'none';
+  els.quizCard.style.display = 'block';
+  loadQuestion();
+}
+
+function updateFilterSummary(){
+  const catLabel = CATEGORY_LABELS[activeCategory];
+  const topicLabel = activeTopic==='all' ? 'All Topics' : activeTopic;
+  els.filterSummary.innerHTML = `Practicing: <b>${catLabel}</b> — <b>${topicLabel}</b> (${queue.length} question${queue.length===1?'':'s'})`;
+}
+
+function currentQueue(){
+  return retryMode ? retryQueue : queue;
+}
+
+function loadQuestion(){
+  const q_ = currentQueue();
+  if(currentIdx >= q_.length){
+    showSummary();
+    return;
+  }
+  answered = false;
+  selected = new Set();
+  const qIndex = q_[currentIdx];
+  const q = QUESTIONS[qIndex];
+
+  els.tag.textContent = q.tag;
+  els.cat.textContent = (q.type==='sata' ? 'SATA • ' : '') + CATEGORY_LABELS[q.category];
+  els.num.textContent = `Question ${currentIdx+1} of ${q_.length}` + (retryMode ? ' (Retry Round)' : '');
+  els.stem.textContent = q.stem;
+  els.hint.textContent = q.type==='sata' ? 'Select ALL options that apply, then submit.' : 'Select one option, then submit.';
+  els.rationale.className = 'rationale';
+  els.rationale.innerHTML = '';
+  els.btnSubmit.style.display = 'block';
+  els.btnSubmit.disabled = false;
+  els.btnNext.style.display = 'none';
+
+  const optOrder = optionOrders[qIndex];
+  els.optionsWrap.innerHTML = '';
+  optOrder.forEach(origIdx=>{
+    const opt = q.options[origIdx];
+    const div = document.createElement('div');
+    div.className = 'option';
+    div.dataset.origIdx = origIdx;
+    const inputType = q.type==='sata' ? 'checkbox' : 'radio';
+    div.innerHTML = `<input type="${inputType}" name="opt"> <span>${opt.t}</span> <span class="mark"></span>`;
+    div.addEventListener('click', ()=>toggleOption(div, q.type));
+    els.optionsWrap.appendChild(div);
+  });
+
+  updateProgress();
+}
+
+function toggleOption(div, type){
+  if(answered) return;
+  const origIdx = parseInt(div.dataset.origIdx);
+  if(type==='sata'){
+    if(selected.has(origIdx)){
+      selected.delete(origIdx);
+      div.classList.remove('selected');
+      div.querySelector('input').checked = false;
+    } else {
+      selected.add(origIdx);
+      div.classList.add('selected');
+      div.querySelector('input').checked = true;
+    }
+  } else {
+    selected = new Set([origIdx]);
+    [...els.optionsWrap.children].forEach(c=>{
+      c.classList.remove('selected');
+      c.querySelector('input').checked = false;
+    });
+    div.classList.add('selected');
+    div.querySelector('input').checked = true;
+  }
+}
+
+function submitAnswer(){
+  const q_ = currentQueue();
+  const qIndex = q_[currentIdx];
+  const q = QUESTIONS[qIndex];
+  if(selected.size===0){
+    alert('Please select an answer before submitting.');
+    return;
+  }
+  answered = true;
+  const correctSet = new Set(q.options.map((o,i)=>o.c?i:null).filter(v=>v!==null));
+  let isCorrect = correctSet.size===selected.size && [...correctSet].every(i=>selected.has(i));
+
+  [...els.optionsWrap.children].forEach(div=>{
+    const origIdx = parseInt(div.dataset.origIdx);
+    const wasSelected = selected.has(origIdx);
+    const isRight = correctSet.has(origIdx);
+    const mark = div.querySelector('.mark');
+    if(isRight){
+      div.classList.add('correct-answer');
+      mark.textContent = '✓ correct';
+      mark.className = 'mark ok';
+    } else if(wasSelected && !isRight){
+      div.classList.add('incorrect-answer');
+      mark.textContent = '✗ not correct';
+      mark.className = 'mark no';
+    }
+  });
+
+  if(isCorrect){
+    score++;
+  } else {
+    if(!retryMode && !missedIndices.includes(qIndex)) missedIndices.push(qIndex);
+  }
+
+  const banner = document.createElement('div');
+  banner.className = 'resultbanner ' + (isCorrect ? 'ok' : 'no');
+  banner.textContent = isCorrect ? '✅ Correct!' : '❌ Not quite — review the rationale below';
+  els.rationale.innerHTML = '';
+  els.rationale.appendChild(banner);
+  const ratText = document.createElement('div');
+  ratText.innerHTML = '<b>Rationale:</b> ' + q.rationale;
+  els.rationale.appendChild(ratText);
+  els.rationale.classList.add('show');
+
+  els.btnSubmit.style.display = 'none';
+  els.btnNext.style.display = 'block';
+}
+
+function nextQuestion(){
+  currentIdx++;
+  loadQuestion();
+}
+
+function updateProgress(){
+  const q_ = currentQueue();
+  const pct = Math.round((currentIdx/q_.length)*100);
+  els.progressBar.style.width = pct + '%';
+  els.progressText.textContent = `Question ${Math.min(currentIdx+1,q_.length)} of ${q_.length}`;
+}
+
+function showSummary(){
+  els.quizCard.style.display = 'none';
+  els.summaryCard.style.display = 'block';
+  els.progressBar.style.width = '100%';
+  const q_ = currentQueue();
+  els.scoreDisplay.textContent = `${score}/${q_.length}`;
+  const pct = q_.length ? Math.round((score/q_.length)*100) : 0;
+  let msg = '';
+  if(pct>=90) msg = "Outstanding — you've got this locked in! 💜";
+  else if(pct>=75) msg = "Solid work — review the missed topics below and you'll be exam-ready. 💗";
+  else msg = "Good start — retry your missed questions to lock it in! 🩺";
+  els.scoreMsg.textContent = `${pct}% — ${msg}`;
+
+  if(missedIndices.length>0){
+    els.missedListWrap.style.display = 'block';
+    els.missedList.innerHTML = '';
+    const uniqueTags = [...new Set(missedIndices.map(i=>QUESTIONS[i].tag))];
+    uniqueTags.forEach(t=>{
+      const li = document.createElement('li');
+      li.textContent = t;
+      els.missedList.appendChild(li);
+    });
+    els.retryRow.style.display = 'block';
+  } else {
+    els.missedListWrap.style.display = 'none';
+    els.retryRow.style.display = 'none';
+  }
+}
+
+function retryMissed(){
+  retryQueue = [...new Set(missedIndices)];
+  missedIndices = [];
+  retryMode = true;
+  currentIdx = 0;
+  score = 0;
+  els.quizCard.style.display = 'block';
+  els.summaryCard.style.display = 'none';
+  loadQuestion();
+}
+
+function restartSet(){
+  retryMode = false;
+  retryQueue = [];
+  currentIdx = 0;
+  score = 0;
+  missedIndices = [];
+  els.quizCard.style.display = 'block';
+  els.summaryCard.style.display = 'none';
+  loadQuestion();
+}
+
+function changeFilter(){
+  activeCategory = 'all';
+  activeTopic = 'all';
+  resetSession();
+}
+
+els.btnSubmit.addEventListener('click', submitAnswer);
+els.btnNext.addEventListener('click', nextQuestion);
+els.btnRetryMissed.addEventListener('click', retryMissed);
+els.btnRestart.addEventListener('click', restartSet);
+els.btnChangeFilter.addEventListener('click', changeFilter);
+
+buildTabs();
+buildTopicSelect();
+resetSession();
+</script>
+</body>
+</html>
